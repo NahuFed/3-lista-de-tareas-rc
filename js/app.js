@@ -15,7 +15,7 @@ function crearTarea(nombre){
     tareas.push( new Tarea(nombre, identificador))    
 }
 
-let botonesEliminar = document.getElementsByClassName('btn-borrar')
+
 
 
 
@@ -28,26 +28,22 @@ function agregarTarea(tarea){
     crearTarea(tarea)
     let elementoLista = document.createElement('li')
     elementoLista.innerHTML=`${tarea}<button class="ms-3 btn  btn-borrar" id="btn-${identificador}"><i class="bi bi-x-square-fill"></i></button>`
-    lista.appendChild(elementoLista)
+    // botonesEliminar.appendChild()
     identificador ++
 }
 
-
+let botonesEliminar = document.querySelectorAll('.btn-borrar')
+botonesEliminar.forEach(boton => {
+    boton.addEventListener('click', () => {
+        borrarTarea(boton.id)
+    })
+})
 
 function borrarTarea(identificador){
-    let boton = document.querySelector(`#btn-${identificador}`)
-    boton.parentElement.removeChild[identificador]
+    let boton = document.getElementById(`${identificador}`)
+    let li = boton.parentElement
+    li.parentElement.removeChild(li)
 }
-
-for (let i = 0; i < botonesEliminar.length; i++) {
-    botonesEliminar[i].addEventListener('click', borrarTarea);
-}
-
-
-
-
-
-
 
 
 formulario.addEventListener('submit',capturarDatos)
