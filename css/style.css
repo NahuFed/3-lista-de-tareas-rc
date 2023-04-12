@@ -1,0 +1,29 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn-borrar{
+    font-size: 1rem;
+    padding: 0;
+    border: none;
+    color: #549e54;    
+    width: auto;
+    height: auto;
+}
+
+.btn-borrar:hover{
+    color: rgba(255, 0, 0, 0.678);
+}
+.container .btn-borrar:active{
+    color: red 
+}
